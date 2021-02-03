@@ -7,9 +7,9 @@ const server = http.createServer(function (req, res) {
     // Content Type: text/plain
     res.writeHead(200, {'Content-Type': 'text/html'});
     // Send the response body as "Hello World"
-    fs.createReadStream('index.html').pipe(res);
+    fs.createReadStream('mywebpage.html').pipe(res);
 });
 
-server.listen(8000);
+server.listen(process.env.PORT || 8000);
 // Console will print the message
 console.log('Server running at http://127.0.0.1:8000/');
